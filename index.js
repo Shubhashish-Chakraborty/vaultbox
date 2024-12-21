@@ -4,6 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const { userRouter } = require("./routes/user");
+const { socialAccountRouter } = require("./routes/socialaccounts");
 
 const app = express();
 const PORT = process.env.PORT;
@@ -11,6 +12,7 @@ const PORT = process.env.PORT;
 app.use(express.json());
 
 app.use('/api/v1/user' , userRouter);
+app.use('/api/v1/socialaccounts' , socialAccountRouter);
 
 async function main() {
     await mongoose.connect(process.env.MONGO_URL);

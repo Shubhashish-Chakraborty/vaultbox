@@ -11,10 +11,19 @@ const UserSchema = new Schema({
     password: String
 })
 
+const SocialAccountSchema = new Schema({
+    accountName: String,
+    description: String,
+    password: String,
+    userId: ObjectId
+})
+
 // CREATING MODEL
 
 const UserModel = mongoose.model('users' , UserSchema);
+const SocialAccountModel = mongoose.model('socialaccounts' , SocialAccountSchema);
 
 module.exports = {
-    UserModel: UserModel
+    UserModel: UserModel,
+    SocialAccountModel: SocialAccountModel
 }
