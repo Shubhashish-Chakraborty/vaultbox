@@ -19,7 +19,13 @@ app.use('/api/v1/socialaccounts' , socialAccountRouter);
 
 app.get("/" , (req , res) => {
     res.json({
-        message: "The Backend is UP!"
+        message: "The Backend is UP!",
+        endpoints: [
+            "/api/v1/user/signup",
+            "/api/v1/user/signin",
+            "/api/v1/socialaccounts/add",
+            "/api/v1/socialaccounts/search"
+        ]
     })
 })
 
